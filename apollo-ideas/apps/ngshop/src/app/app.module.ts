@@ -8,6 +8,7 @@ import { ProductListComponent } from './pages/product-list/product-list.componen
 import {RouterModule, Routes} from "@angular/router";
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import {UiModule} from "@apollo-ideas/ui";
 
 const appRoutes: Routes = [
   {path:'', component: HomePageComponent},
@@ -15,8 +16,19 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, NxWelcomeComponent, HomePageComponent, ProductListComponent, HeaderComponent, FooterComponent],
-  imports: [BrowserModule, RouterModule.forRoot(appRoutes)],
+  declarations: [
+    AppComponent,
+    NxWelcomeComponent,
+    HomePageComponent,
+    ProductListComponent,
+    HeaderComponent,
+    FooterComponent
+  ],
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot(appRoutes),
+    UiModule
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
