@@ -18,7 +18,8 @@
       "@apollo-ideas/orders": ["libs/orders/src/index.ts"],
       "@apollo-ideas/products": ["libs/products/src/index.ts"],
       "@apollo-ideas/ui": ["libs/ui/src/index.ts"],
-      "@apollo-ideas/users": ["libs/users/src/index.ts"]
+      "@apollo-ideas/users": ["libs/users/src/index.ts"],
+      "@env/*": ["environments/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]

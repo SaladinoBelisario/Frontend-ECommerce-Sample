@@ -14,7 +14,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "apolloIdeas",
+            "prefix": "admin",
             "style": "camelCase"
           }
         ],
@@ -22,7 +22,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "apollo-ideas",
+            "prefix": "admin",
             "style": "kebab-case"
           }
         ]
