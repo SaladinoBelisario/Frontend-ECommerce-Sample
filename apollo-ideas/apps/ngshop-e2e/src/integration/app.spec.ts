@@ -8,6 +8,6 @@ describe('ngshop', () => {
     cy.login('my-email@something.com', 'myPassword');
 
     // Function helper example, see `../support/app.po.ts` file
-    getGreeting().contains('Welcome ngshop');
+    getGreeting().contains('Welcome to ngshop!');
   });
 });

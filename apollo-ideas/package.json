@@ -4,10 +4,30 @@
   "license": "MIT",
   "scripts": {
     "ng": "nx",
-    "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2015 browser module main",
-    "start": "nx serve",
-    "build": "nx build",
-    "test": "nx test"
+    "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points",
+    "nx": "nx",
+    "start": "ng serve",
+    "start-admin": "nx serve admin",
+    "start-eshop": "nx serve ngshop",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "nx workspace-lint && ng lint",
+    "e2e": "ng e2e",
+    "affected:apps": "nx affected:apps",
+    "affected:libs": "nx affected:libs",
+    "affected:build": "nx affected:build",
+    "affected:e2e": "nx affected:e2e",
+    "affected:test": "nx affected:test",
+    "affected:lint": "nx affected:lint",
+    "affected:dep-graph": "nx affected:dep-graph",
+    "affected": "nx affected",
+    "format": "nx format:write",
+    "format:write": "nx format:write",
+    "format:check": "nx format:check",
+    "update": "nx migrate latest",
+    "workspace-generator": "nx workspace-generator",
+    "dep-graph": "nx dep-graph",
+    "help": "nx help"
   },
   "private": true,
   "dependencies": {
@@ -20,6 +40,10 @@
     "@angular/platform-browser-dynamic": "~13.1.0",
     "@angular/router": "~13.1.0",
     "@nrwl/angular": "13.4.6",
+    "normalize.css": "^8.0.1",
+    "primeflex": "^3.1.2",
+    "primeicons": "^5.0.0",
+    "primeng": "^13.1.0",
     "rxjs": "~7.4.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.4"
@@ -56,6 +80,8 @@
     "postcss-url": "^10.1.1",
     "prettier": "^2.3.1",
     "ts-jest": "27.0.5",
+    "ts-node": "~9.1.1",
+    "tslint": "~6.1.0",
     "typescript": "~4.4.3"
   }
 }
