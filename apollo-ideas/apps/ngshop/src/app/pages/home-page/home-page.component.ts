@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'eshop-home-page',
+  selector: 'bluebits-home-page',
   templateUrl: './home-page.component.html',
 })
 export class HomePageComponent implements OnInit {

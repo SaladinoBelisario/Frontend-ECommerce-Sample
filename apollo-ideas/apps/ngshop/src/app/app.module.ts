@@ -8,7 +8,7 @@ import { ProductListComponent } from './pages/product-list/product-list.componen
 import { RouterModule, Routes } from '@angular/router';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
-import { ProductsModule } from '@apollo-ideas/products';
+import { ProductsModule } from '@bluebits/products';
 
 import { AccordionModule } from 'primeng/accordion';
 
