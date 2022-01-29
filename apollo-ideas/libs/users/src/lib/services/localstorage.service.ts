@@ -5,6 +5,7 @@ const TOKEN = 'jwtToken';
 @Injectable({
   providedIn: 'root'
 })
+
 export class LocalstorageService {
   setToken(data: string | undefined) {
     if (typeof data === "string") {
