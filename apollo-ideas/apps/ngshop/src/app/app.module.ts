@@ -12,10 +12,12 @@ import { UiModule } from '@apollo-ideas/ui';
 import { AccordionModule } from 'primeng/accordion';
 import { NavComponent } from './shared/nav/nav.component';
 import { HttpClientModule } from '@angular/common/http';
+import { OrdersModule } from '@apollo-ideas/orders';
+import { ToastModule } from 'primeng/toast';
+import { MessagesComponent } from './shared/messages/messages.component';
+import { MessageService } from 'primeng/api';
 
-const routes: Routes = [
-  { path: '', component: HomePageComponent }
-];
+const routes: Routes = [{ path: '', component: HomePageComponent }];
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ const routes: Routes = [
     HomePageComponent,
     HeaderComponent,
     FooterComponent,
-    NavComponent
+    NavComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
@@ -32,9 +35,11 @@ const routes: Routes = [
     ProductsModule,
     AccordionModule,
     BrowserAnimationsModule,
-    UiModule
+    UiModule,
+    OrdersModule,
+    ToastModule
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

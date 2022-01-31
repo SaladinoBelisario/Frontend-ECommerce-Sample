@@ -13,7 +13,7 @@ export class ProductsService {
 
   constructor(private http: HttpClient) {}
 
-  getProducts(categoriesFilter?: (string | undefined)[] | undefined): Observable<Product[]> {
+    getProducts(categoriesFilter?: (string | undefined)[] | undefined): Observable<Product[]> {
     let params = new HttpParams();
     if (categoriesFilter) {
       params = params.append('categories', categoriesFilter.join(','));
