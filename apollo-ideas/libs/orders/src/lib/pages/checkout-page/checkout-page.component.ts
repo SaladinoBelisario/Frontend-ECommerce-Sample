@@ -14,7 +14,6 @@ import { OrdersService } from '../../services/orders.service';
   selector: 'orders-checkout-page',
   templateUrl: './checkout-page.component.html'
 })
-
 export class CheckoutPageComponent implements OnInit, OnDestroy {
   constructor(
     private router: Router,
@@ -60,7 +59,7 @@ export class CheckoutPageComponent implements OnInit, OnDestroy {
     this.usersService
       .observeCurrentUser()
       .pipe(takeUntil(this.unsubscribe$))
-      .subscribe((user: any) => {
+      .subscribe((user) => {
         if (user) {
           this.userId = user.id;
           this.checkoutForm['name'].setValue(user.name);

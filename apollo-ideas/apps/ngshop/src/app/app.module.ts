@@ -16,9 +16,9 @@ import { OrdersModule } from '@apollo-ideas/orders';
 import { ToastModule } from 'primeng/toast';
 import { MessagesComponent } from './shared/messages/messages.component';
 import { MessageService } from 'primeng/api';
+import { JwtInterceptor, UsersModule } from '@apollo-ideas/users';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import {JwtInterceptor, UsersModule} from "@apollo-ideas/users";
 
 const routes: Routes = [{ path: '', component: HomePageComponent }];
 

@@ -1961,6 +1961,11 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
+"@stripe/stripe-js@^1.22.0":
+  version "1.22.0"
+  resolved "https://registry.yarnpkg.com/@stripe/stripe-js/-/stripe-js-1.22.0.tgz#9d3d2f0a1ce81f185ec477fd7cc67544b2b2a00c"
+  integrity sha512-fm8TR8r4LwbXgBIYdPmeMjJJkxxFC66tvoliNnmXOpUgZSgQKoNPW3ON0ZphZIiif1oqWNhAaSrr7tOvGu+AFg==
+
 "@tootallnate/once@1":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-1.1.2.tgz#ccb91445360179a04e7fe6aff78c00ffc1eeaf82"
@@ -6841,6 +6846,13 @@ ng-packagr@^13.0.0:
     stylus "^0.56.0"
   optionalDependencies:
     esbuild "^0.14.0"
+
+ngx-stripe@^13.0.0:
+  version "13.0.0"
+  resolved "https://registry.yarnpkg.com/ngx-stripe/-/ngx-stripe-13.0.0.tgz#d5ed50590447aa74012de4e75ac9bcdafc68b1c8"
+  integrity sha512-SImKvoC/mZZrtzh2UUmxFdkqMLKX2y+BtcvMAPdHD4D7miXWEjCTZeXt8h85mcfy7y1NKKwIipH4CSr9eBzZ4w==
+  dependencies:
+    tslib "^2.3.0"
 
 nice-napi@^1.0.2:
   version "1.0.2"
