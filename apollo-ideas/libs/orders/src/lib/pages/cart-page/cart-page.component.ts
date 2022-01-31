@@ -5,7 +5,6 @@ import { takeUntil } from 'rxjs/operators';
 import { CartItemDetailed } from '../../models/cart';
 import { CartService } from '../../services/cart.service';
 import { OrdersService } from '../../services/orders.service';
-
 @Component({
   selector: 'orders-cart-page',
   templateUrl: './cart-page.component.html',
@@ -26,7 +25,6 @@ export class CartPageComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    // @ts-ignore
     this.endSubs$.next();
     this.endSubs$.complete();
   }
@@ -34,11 +32,9 @@ export class CartPageComponent implements OnInit, OnDestroy {
   private _getCartDetails() {
     this.cartService.cart$.pipe(takeUntil(this.endSubs$)).subscribe((respCart) => {
       this.cartItemsDetailed = [];
-      // @ts-ignore
       this.cartCount = respCart?.items.length ?? 0;
-      // @ts-ignore
       respCart.items.forEach((cartItem) => {
-        this.ordersService.getProduct(cartItem.productId!).subscribe((respProduct) => {
+        this.ordersService.getProduct(cartItem.productId).subscribe((respProduct) => {
           this.cartItemsDetailed.push({
             product: respProduct,
             quantity: cartItem.quantity
@@ -56,7 +52,7 @@ export class CartPageComponent implements OnInit, OnDestroy {
     this.cartService.deleteCartItem(cartItem.product.id);
   }
 
-  updateCartItemQuantity(event: { value: any; }, cartItem: CartItemDetailed) {
+  updateCartItemQuantity(event, cartItem: CartItemDetailed) {
     this.cartService.setCartItem(
       {
         productId: cartItem.product.id,

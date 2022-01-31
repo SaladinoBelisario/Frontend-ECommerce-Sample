@@ -2,7 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from '@apollo-ideas/users';
+import { AuthService } from '../../services/auth.service';
 import { LocalstorageService } from '../../services/localstorage.service';
 
 @Component({
@@ -11,7 +11,7 @@ import { LocalstorageService } from '../../services/localstorage.service';
   styles: []
 })
 export class LoginComponent implements OnInit {
-  loginFormGroup!: FormGroup;
+  loginFormGroup: FormGroup;
   isSubmitted = false;
   authError = false;
   authMessage = 'Email or Password are wrong';
@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
 
     if (this.loginFormGroup.invalid) return;
 
-    this.auth.login(this.loginForm['email'].value, this.loginForm['password'].value).subscribe(
+    this.auth.login(this.loginForm.email.value, this.loginForm.password.value).subscribe(
       (user) => {
         this.authError = false;
         this.localstorageService.setToken(user.token);

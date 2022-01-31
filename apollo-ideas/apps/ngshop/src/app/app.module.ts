@@ -11,11 +11,14 @@ import { ProductsModule } from '@apollo-ideas/products';
 import { UiModule } from '@apollo-ideas/ui';
 import { AccordionModule } from 'primeng/accordion';
 import { NavComponent } from './shared/nav/nav.component';
-import { HttpClientModule } from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { OrdersModule } from '@apollo-ideas/orders';
 import { ToastModule } from 'primeng/toast';
 import { MessagesComponent } from './shared/messages/messages.component';
 import { MessageService } from 'primeng/api';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import {JwtInterceptor, UsersModule} from "@apollo-ideas/users";
 
 const routes: Routes = [{ path: '', component: HomePageComponent }];
 
@@ -32,14 +35,20 @@ const routes: Routes = [{ path: '', component: HomePageComponent }];
     BrowserModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
+    StoreModule.forRoot({}),
+    EffectsModule.forRoot([]),
     ProductsModule,
     AccordionModule,
     BrowserAnimationsModule,
     UiModule,
     OrdersModule,
-    ToastModule
+    ToastModule,
+    UsersModule
   ],
-  providers: [MessageService],
+  providers: [
+    MessageService,
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
